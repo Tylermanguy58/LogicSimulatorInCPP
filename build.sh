@@ -1,0 +1,1 @@
+g++ $(find src -name "*.cpp") -o program -lSDL3 -lSDL3_image
