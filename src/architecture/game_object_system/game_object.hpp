@@ -18,6 +18,7 @@ namespace Architecture::GameObjectSystem
     public:
         void Update();
         void Initialize();
+        void Start();
 
         template <typename T>
         T* AddComponent()

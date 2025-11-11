@@ -18,6 +18,11 @@ namespace MovementSystem
     {
 
     }
+
+    void CharacterMovementController::Start()
+    {
+
+    }
 }
 
 #endif //CHARACTER_MOVEMENT_CONTROLLER_CPP

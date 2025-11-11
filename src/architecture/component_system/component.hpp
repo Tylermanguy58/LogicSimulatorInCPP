@@ -19,6 +19,7 @@ namespace Architecture::ComponentSystem
     public:
         virtual void Update() = 0;
         virtual void Initialize() = 0;
+        virtual void Start() = 0;
         GameObjectSystem::GameObject* GetGameObject() { return gameObject; }
         void SetGameObject(GameObjectSystem::GameObject* gameObject) { this->gameObject = gameObject; }
     };

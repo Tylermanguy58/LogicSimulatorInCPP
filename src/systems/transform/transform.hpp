@@ -10,6 +10,7 @@ namespace Systems::TransformSystem
     public:
         void Update() override;
         void Initialize() override;
+        void Start() override;
     };
 }
 

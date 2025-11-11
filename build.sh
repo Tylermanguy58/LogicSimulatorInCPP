@@ -1,1 +1,1 @@
-g++ $(find src -name "*.cpp") -o program
+g++ $(find src -name "*.cpp") -o program -lSDL3

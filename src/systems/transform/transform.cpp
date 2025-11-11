@@ -14,6 +14,11 @@ namespace Systems::TransformSystem
     {
 
     }
+
+    void Transform::Start()
+    {
+
+    }
 }
 
 #endif //TRANSFORM_CPP

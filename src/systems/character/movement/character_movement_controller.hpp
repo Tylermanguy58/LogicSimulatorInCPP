@@ -11,6 +11,7 @@ namespace MovementSystem
         void Move() override;
         void Update() override;
         void Initialize() override;
+        void Start() override;
     };
 }
 

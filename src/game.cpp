@@ -1,9 +1,58 @@
 #ifndef GAME_CPP
 #define GAME_CPP
+#include "game.hpp"
+#include <iostream>
 
 namespace Architecture
 {
+    void Game::Initialize()
+    {
+        if(SDL_Init(SDL_INIT_VIDEO))
+        {
+            window = SDL_CreateWindow("sup", 800, 400, 0);
+            renderer = SDL_CreateRenderer(window, NULL);
+            scene = new Scene();
+            isActive = true;
+        }
+        else
+        {
+            isActive = false;
+        }
+    }
 
+    void Game::Cleanup()
+    {
+        SDL_DestroyRenderer(renderer);
+        SDL_DestroyWindow(window);
+        delete scene;
+        SDL_Quit();
+    } 
+        
+    void Game::Update()
+    {
+        Render();
+        scene->Update(); 
+        SDL_Event event;
+        while (SDL_PollEvent(&event)) 
+        {
+            if (event.type == SDL_EVENT_QUIT)
+            {
+                Quit();
+            }
+        }
+    }
+
+    void Game::Quit()
+    {
+        isActive = false;
+    }
+
+    void Game::Render()
+    {
+        SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+        SDL_RenderClear(renderer);
+        SDL_RenderPresent(renderer);
+    }
 }
 
 #endif //GAME_CPP

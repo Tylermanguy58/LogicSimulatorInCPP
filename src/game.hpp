@@ -1,7 +1,8 @@
+#pragma once
 #ifndef GAME_HPP
 #define GAME_HPP
 #include <SDL3/SDL.h>
-#include <memory>
+#include "architecture/scene/scene.hpp"
 
 namespace Architecture
 {
@@ -9,13 +10,20 @@ namespace Architecture
     {
     private:
         bool isActive;
-        std::unique_ptr<SDL_Renderer> renderer;
-        std::unique_ptr<SDL_Window> window;
+        SDL_Renderer* renderer;
+        SDL_Window* window;
+        Scene* scene;
     public:
         void Initialize();
+        void Update();
         void Cleanup();
-        SDL_Renderer* GetRenderer() { return renderer.get(); }
-        SDL_Window* GetWindow() { return window.get(); }
+        void Quit();
+        void Start();
+        void Render();
+        bool GetIsActive() { return isActive; }
+        SDL_Renderer* GetRenderer() { return renderer; }
+        SDL_Window* GetWindow() { return window; }
+        Scene* GetScene() { return scene; }
     };
 }
 

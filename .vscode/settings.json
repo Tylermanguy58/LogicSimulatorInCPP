@@ -4,6 +4,7 @@
         "string": "cpp",
         "new": "cpp",
         "vector": "cpp",
-        "type_traits": "cpp"
+        "type_traits": "cpp",
+        "memory": "cpp"
     }
 }

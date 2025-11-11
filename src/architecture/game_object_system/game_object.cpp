@@ -20,7 +20,14 @@ namespace Architecture::GameObjectSystem
             components[i]->Initialize();
         }
     }
-    
+        
+    void GameObject::Start()
+    {
+        for(int i = 0; i < components.size(); i++)
+        {
+            components[i]->Start();
+        }
+    }
 }
 
 #endif //NODE_CPP
