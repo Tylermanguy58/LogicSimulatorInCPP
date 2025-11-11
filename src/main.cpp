@@ -1,5 +1,4 @@
 #include <SDL3/SDL_main.h>
-#include <SDL3/SDL.h>
 #include <iostream>
 #include <vector>
 #include "systems/character/movement/character_movement_controller.hpp" 
