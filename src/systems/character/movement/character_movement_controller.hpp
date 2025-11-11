@@ -1,6 +1,6 @@
 #ifndef CHARACTER_MOVEMENT_CONTROLLER_HPP
 #define CHARACTER_MOVEMENT_CONTROLLER_HPP
-#include "movement_controller.hpp"
+#include "../../movement_controller/movement_controller.hpp"
 
 namespace MovementSystem
 {

@@ -2,7 +2,7 @@
 #define COMPONENT_CPP
 #include "component.hpp"
 
-namespace ComponentSystem
+namespace Architecture::ComponentSystem
 {
 
 }

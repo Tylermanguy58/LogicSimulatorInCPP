@@ -11,12 +11,12 @@ namespace MovementSystem
 
     void CharacterMovementController::Update()
     {
-        std::cout << "sup" << std::endl;
+
     }
 
     void CharacterMovementController::Initialize()
     {
-        std::cout << "hi" << std::endl;
+
     }
 }
 

@@ -1,10 +1,10 @@
 #ifndef MOVEMENT_CONTROLLER_HPP
 #define MOVEMENT_CONTROLLER_HPP
-#include "../component_system/component.hpp"
+#include "../../architecture/component_system/component.hpp"
 
 namespace MovementSystem
 {
-    class MovementController : public ComponentSystem::Component
+    class MovementController : public Architecture::ComponentSystem::Component
     {
     private:
     public:
