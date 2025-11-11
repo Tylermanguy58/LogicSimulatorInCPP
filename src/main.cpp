@@ -1,29 +1,22 @@
-#include "game_system/game_manager/game_manager.hpp"
-using namespace GameSystem;
-#include <SDL3/SDL.h>
-#include <SDL3/SDL_main.h>
+#include <iostream>
+#include "movement_controller/character_movement_controller.hpp" 
+#include "component_system/component.hpp"
+#include "node_system/node.hpp"
+using namespace MovementSystem;
+using namespace ComponentSystem;
+using namespace NodeSystem;
 
-int main(int argc, char *argv[])
+Node* node = new Node();
+
+int main()
 {
-    const int FPS = 60;
-    const int frameDelay = 1000 / FPS;
-    Uint32 frameStart;
-    int frameTime;
-    GameManager* gameManager = new GameManager();
-    gameManager->Init();
+    node->Initialize();
+    Component* component = node->AddComponent<CharacterMovementController>();
 
-    while(gameManager->GetIsRunning())
+    while(true)
     {
-        frameStart = SDL_GetTicks();
-        gameManager->Update();
-        frameTime = SDL_GetTicks() - frameStart;
-        if(frameDelay > frameTime)
-        {
-            SDL_Delay(frameDelay - frameTime);
-        }
+        node->Update();
     }
-
-    delete gameManager;
 
     return 0;
 }
