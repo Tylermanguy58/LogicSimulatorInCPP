@@ -2,6 +2,8 @@
 #define GAME_CPP
 #include "game.hpp"
 #include <iostream>
+#include "architecture/game_object_system/game_object.hpp"
+#include "systems/transform/transform.hpp"
 
 namespace Architecture
 {
@@ -9,10 +11,14 @@ namespace Architecture
     {
         if(SDL_Init(SDL_INIT_VIDEO))
         {
+            isActive = true;
             window = SDL_CreateWindow("sup", 800, 400, 0);
             renderer = SDL_CreateRenderer(window, NULL);
             scene = new Scene();
-            isActive = true;
+            scene->Initialize();
+            GameObjectSystem::GameObject* gameObject = scene->CreateGameObject();
+            gameObject->Initialize();
+            gameObject->AddComponent<Systems::TransformSystem::Transform>();
         }
         else
         {
@@ -31,7 +37,6 @@ namespace Architecture
     void Game::Update()
     {
         Render();
-        scene->Update(); 
         SDL_Event event;
         while (SDL_PollEvent(&event)) 
         {

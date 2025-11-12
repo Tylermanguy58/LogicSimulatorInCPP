@@ -15,10 +15,12 @@ namespace Architecture::GameObjectSystem
     private:
         std::vector<std::unique_ptr<Architecture::ComponentSystem::Component>> components;
         std::vector<GameObject*> children;
+        GameObject* parent;
     public:
         void Update();
         void Initialize();
-        void Start();
+        void SetParent(GameObject* parent) { this->parent = parent; }
+        GameObject* GetParent() { return parent; }
 
         template <typename T>
         T* AddComponent()
