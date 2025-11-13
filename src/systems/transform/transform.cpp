@@ -12,10 +12,25 @@ namespace Systems::TransformSystem
 
     void Transform::Initialize()
     {
-
+        vector = new Numerics::Vector2(0, 0);
     }
 
     void Transform::Start()
+    {
+
+    }
+
+    void Transform::Deinitialize()
+    {
+        delete vector;
+    }
+    
+    void Transform::OnDisable()
+    {
+
+    }
+
+    void Transform::OnEnable()
     {
 
     }

@@ -9,9 +9,12 @@ namespace MovementSystem
     private:
     public:
         virtual void Move() = 0;
-        void Update() override = 0;
-        void Initialize() override = 0;
-        void Start() override = 0;
+        virtual void Update() override = 0;
+        virtual void Initialize() override = 0;
+        virtual void Start() override = 0;
+        virtual void Deinitialize() override = 0;
+        virtual void OnEnable() override = 0;
+        virtual void OnDisable() override = 0;
     };
 }
 

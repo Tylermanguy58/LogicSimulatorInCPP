@@ -7,6 +7,7 @@ namespace MovementSystem
 {
     void CharacterMovementController::Move()
     {
+
     }
 
     void CharacterMovementController::Update()
@@ -20,6 +21,21 @@ namespace MovementSystem
     }
 
     void CharacterMovementController::Start()
+    {
+
+    }
+
+    void CharacterMovementController::Deinitialize()
+    {
+
+    }
+
+    void CharacterMovementController::OnDisable()
+    {
+
+    }
+
+    void CharacterMovementController::OnEnable()
     {
 
     }

@@ -12,6 +12,9 @@ namespace MovementSystem
         void Update() override;
         void Initialize() override;
         void Start() override;
+        void Deinitialize() override;
+        void OnEnable() override;
+        void OnDisable() override;
     };
 }
 
