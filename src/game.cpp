@@ -4,6 +4,7 @@
 #include <iostream>
 #include "architecture/game_object_system/game_object.hpp"
 #include "systems/transform/transform.hpp"
+#include "systems/ship/ship_controller/ship_controller.hpp"
 
 namespace Architecture
 {
@@ -17,8 +18,8 @@ namespace Architecture
             scene = new Scene();
             scene->Initialize();
             GameObjectSystem::GameObject* gameObject = scene->CreateGameObject();
-            gameObject->Initialize();
             gameObject->AddComponent<Systems::TransformSystem::Transform>();
+            gameObject->AddComponent<Systems::ShipSystem::ShipController>();
         }
         else
         {
@@ -37,6 +38,7 @@ namespace Architecture
     void Game::Update()
     {
         Render();
+        scene->Update();
         SDL_Event event;
         while (SDL_PollEvent(&event)) 
         {

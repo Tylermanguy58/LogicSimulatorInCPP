@@ -29,6 +29,7 @@ namespace Architecture::GameObjectSystem
 
             std::unique_ptr<T> component = std::make_unique<T>();
             T* rawPointer = component.get();
+            static_cast<ComponentSystem::Component*>(rawPointer)->Initialize();
             components.push_back(std::move(component));
             return rawPointer;
         }

@@ -7,7 +7,7 @@ namespace Systems::TransformSystem
 {
     void Transform::Update()
     {
-
+        std::cout << "Updating Transform Controller" << std::endl;
     }
 
     void Transform::Initialize()
